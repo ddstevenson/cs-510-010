@@ -1,7 +1,7 @@
 #include "client.h"
 
 int main(void) {
-	Client test;
+    Client test;
 
-	return 0; 
+    return 0;
 }
