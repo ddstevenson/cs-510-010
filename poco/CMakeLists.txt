@@ -1,0 +1,69 @@
+cmake_minimum_required(VERSION 3.16)
+
+add_library(Net
+    src/Net/FTPClientSession.cpp
+    src/Net/IPAddress.cpp
+    src/Net/SocketAddressImpl.cpp
+    src/Net/NetException.cpp
+    src/Net/DialogSocket.cpp
+    src/Net/SocketAddress.cpp
+    src/Net/SocketStream.cpp
+    src/Net/StreamSocket.cpp
+    src/Net/ServerSocket.cpp
+    src/Net/IPAddressImpl.cpp
+    src/Net/Socket.cpp
+    src/Net/DNS.cpp
+    src/Net/HostEntry.cpp
+    src/Net/StreamSocketImpl.cpp
+    src/Net/SocketImpl.cpp
+    src/Net/ServerSocketImpl.cpp
+    src/Foundation/Timespan.cpp
+    src/Foundation/Mutex.cpp
+    src/Foundation/Mutex_POSIX.cpp
+    src/Foundation/Exception.cpp
+    src/Foundation/Ascii.cpp
+    src/Foundation/Bugcheck.cpp
+    src/Foundation/BinaryWriter.cpp
+    src/Foundation/BinaryReader.cpp
+    src/Foundation/RefCountedObject.cpp
+    src/Foundation/NumberFormatter.cpp
+    src/Foundation/NumberParser.cpp
+    src/Foundation/AtomicCounter.cpp
+    src/Foundation/Timestamp.cpp
+    src/Foundation/UTF8Encoding.cpp
+    src/Foundation/TextIterator.cpp
+    src/Foundation/Unicode.cpp
+    src/Foundation/UTF32Encoding.cpp
+    src/Foundation/TextConverter.cpp
+    src/Foundation/Debugger.cpp
+    src/Foundation/TextEncoding.cpp
+    src/Foundation/NumericString.cpp
+    src/Foundation/RWLock.cpp
+    src/Foundation/ASCIIEncoding.cpp
+    src/Foundation/Latin1Encoding.cpp
+    src/Foundation/Latin2Encoding.cpp
+    src/Foundation/Latin9Encoding.cpp
+    src/Foundation/UTF16Encoding.cpp
+    src/Foundation/Windows1250Encoding.cpp
+    src/Foundation/Windows1251Encoding.cpp
+    src/Foundation/Windows1252Encoding.cpp
+    src/Foundation/pcre_ucd.c
+    src/Foundation/pcre_tables.c
+)
+target_compile_definitions(Net PUBLIC
+    POCO_ENABLE_CPP11
+    POCO_ENABLE_CPP14
+    POCO_HAVE_FD_EPOLL
+    POCO_OS_FAMILY_UNIX
+    _FILE_OFFSET_BITS=64
+    _LARGEFILE64_SOURCE
+    _REENTRANT
+    _THREAD_SAFE
+    _XOPEN_SOURCE=600
+)
+target_include_directories(Net PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}
+)
+target_link_libraries(Net INTERFACE
+    pthread
+)

@@ -4,3 +4,4 @@ project(PSU-FTP-Client)
 
 add_subdirectory(psuftp)
 add_subdirectory(boost)
+add_subdirectory(poco)
