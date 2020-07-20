@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
 
-find_package(fmt REQUIRED)
-
 add_executable(psuftp
     client.cpp
     main.cpp
@@ -13,7 +11,7 @@ set_property(TARGET psuftp PROPERTY CXX_STANDARD 20)
 
 target_link_libraries(psuftp
     Net
-    fmt::fmt
+    fmt
     program_options
 )
 
