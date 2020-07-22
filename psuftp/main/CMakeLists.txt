@@ -13,9 +13,5 @@ target_link_libraries(psuftp
     Net
     fmt
     program_options
-)
-
-target_include_directories(psuftp PRIVATE ${PROJECT_SOURCE_DIR})
-target_compile_options(psuftp PRIVATE
-    -fdiagnostics-color=always
+    filesystem
 )
