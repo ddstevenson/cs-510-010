@@ -6,10 +6,12 @@ extern "C" {
 #include <uev.h>
 }
 
-// Creates and destructs an FTP server for the test suits
+// Creates and destructs an FTP server for the test suites
 class FTPServerFixture
 {
 public:
+    static constexpr auto TestPort = 3739;
+
     FTPServerFixture();
     ~FTPServerFixture();
 

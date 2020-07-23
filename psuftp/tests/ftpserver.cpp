@@ -12,7 +12,7 @@ char *         home        = NULL;
 int            inetd       = 0;
 int            background  = 0;
 int            do_syslog   = 0;
-int            do_ftp      = 3739;
+int            do_ftp      = FTPServerFixture::TestPort;
 int            do_insecure = 1;
 struct passwd *pw          = NULL;
 
