@@ -121,6 +121,8 @@ FTPServerFixture::FTPServerFixture() {
 
     DBG("Serving files as PID %d ...", getpid());
     ftpThread = std::thread([this]() { serve_files(&ctx); });
+    // poor man thread sync
+    while (!ctx.running) { std::this_thread::yield(); }
 }
 
 FTPServerFixture::~FTPServerFixture() {
