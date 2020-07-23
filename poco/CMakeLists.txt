@@ -57,9 +57,8 @@ target_compile_definitions(Net PUBLIC
     POCO_OS_FAMILY_UNIX
     _FILE_OFFSET_BITS=64
     _LARGEFILE64_SOURCE
-    _REENTRANT
-    _THREAD_SAFE
-    _XOPEN_SOURCE=600
+    _XOPEN_SOURCE=700
+    _POSIX_C_SOURCE=200809L
 )
 target_include_directories(Net PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
